@@ -66,7 +66,7 @@ Version 0.1.0
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Eclipse libre) - mira el archivo LICENSE.md para detalles
+Este proyecto está bajo la Licencia (Eclipse libre).
 
 ## Agradecimientos 📄
 
