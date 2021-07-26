@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Crear Usuarios</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:40px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="menuAdministrador.jsf"
+				style="width:100px;height:20px;position:relative" />
+
+			<p:menuitem value=" Crear usuarios"  url="registrarse1.jsf"
+				style="width:160px;height:20px;position:relative" />
+
+			<p:menuitem value="Consultar usuarios"  url="consultarUsuarios1.jsf"
+				style="width:210px;height:20px;position:relative" />
+			
+			
+			<p:menuitem value="Cambiar contraseña"  url="cambiarContraseña.jsf"
+				style="width:220px;height:20px;position:relative" />
+				
+			<p:menuitem value="Bloquear usuario"  url="BloquearUsuario2.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+				<p:menuitem value="Auditoría"  url="auditoria.jsf"
+				style="width:170px;height:20px;position:relative" />
+				
+			<p:menuitem value="Cerrar Sesión"  url="index.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		</h:form>
+	<h:form>
+	
+	<img src="imagenes/bloquear.PNG" style="width:350px;position: absolute ; right: 820px; top:290px" />
+	<div style="position:absolute; top:220px;  left:340px; text-align:center"> 
+
+				<h1>Bloquear usuarios</h1>
+			</div>
+		
+		<p:panel id="panel"  
+			style="width:450px;position: relative ; right: -700px; top:235px;background-color:#CAFFCA;background-repeat:repeat; ">
+			<h:panelGrid columns="4" cellpadding="5">
+				
+						
+		<label>Correo electrónico:</label>
+		<h:inputText value="#{bloquear.usuario.correo}" id="correo"  required="true" requiredMessage="El correo es obligatorio">
+		<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" 
+		validateRequired="Debe ser un correo válido"/> 
+		</h:inputText>* <h:message for="correo" style="color:red"/>
+
+
+		<label>Clave:</label>
+		<h:inputSecret type="password" value="#{bloquear.usuario.clave}" id="clave" required="true"
+			requiredMessage="La clave es obligatorio">
+		<f:validateRequired/>
+		</h:inputSecret>*
+		<h:message for="clave" style="color:red" />	
+		
+		
+				 
+			</h:panelGrid>
+<div> <h:commandButton action="#{bloquear.iniciarSesion()}" 
+		value="Iniciar Sesión" /> <input type="reset" value="Restablecer" /></div> 
+		</p:panel>
+		
+	</h:form>
+</h:body>
+
+</html>

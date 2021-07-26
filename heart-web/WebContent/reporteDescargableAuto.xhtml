@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"> <h:head>
+	
+	<title>Reporte-Personas-Edad</title>
+	
+	</h:head>
+	
+	 <body>
+	 
+	 
+
+
+<h:form>
+
+		<li> <h:link outcome="index" value="Inicio"
+			style="color:DarkBlue;font-weight:bold;text-decoration:underline;font-size:xx-large;font-family:Segoe UI;font-style:italic;text-align:left;" /></li>
+
+
+	
+	<p:dataTable id="reporteAuto" var="personaAuto" value="#{panel.autos}"
+		rows="10" paginator="true"
+		paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks}"
+		rowsPerPageTemplate="5,10,15">
+		<p:column headerText="Nombre">
+			<h:outputText value="#{personaAuto.dueño.nombre}" />
+		</p:column>
+		<p:column headerText="Edad">
+			<h:outputText value="#{personaAuto.numeroAutos}" />
+		</p:column>
+	</p:dataTable>
+
+			
+					    <p:chart type="bar" model="#{panel.barModelAuto}" style="height:500px" />
+		
+	
+	
+
+	
+	
+
+<!-- BOTON  PDF-->
+
+
+	
+		<h:commandLink> 
+			<h:graphicImage url="images/ppdf.png" width="100" />
+			<p:dataExporter type="pdf" target="reporteAuto" fileName="Listado de Personas con su respectivo Numero de Autos"></p:dataExporter>	
+		</h:commandLink> 
+	
+	
+	
+    <!-- BOTON    EXCEL  
+         
+		<h:commandLink> 
+			<h:graphicImage url="images/R.png" width="100" />
+			<p:dataExporter type="pdf" target="grafico" fileName="Grafico Personas"></p:dataExporter>	
+		</h:commandLink>    
+ 	-->  
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+</h:form> </body> </html>

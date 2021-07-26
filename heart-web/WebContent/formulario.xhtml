@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://java.sun.com/jsf/html">
+<head>
+<title>Formulario</title>
+</head>
+
+<body style="background-color:#FFF176" align="center">
+
+<h:form align="center">
+ <h:panelGrid columns="10" align="center">
+<tr align="center">
+<td>Nombre</td><td><h:inputText id="txtNombre" value="#{persona.nombre}" required="true"
+requiredMessage="El campo es obligatorio"/>*</td>
+<td><h:message for="txtNombre" style="color:red"/></td>
+</tr>
+
+<tr align="center">
+<td>Edad</td><td><p:inputText validatorMessage="Error en el formato" requiredMessage="El campo es obligatorio" id="txtEdad"
+					value="#{persona.edad}" required="true" label="Edad" update="panel" >
+					<f:validateLongRange minimum="18" maximum="70"/></p:inputText>*</td>
+</tr>
+
+<tr align="center">
+<td>Correo Electrónico</td><td><h:inputText id="txtCorreo" value="#{persona.correo}"
+required="true" requiredMessage="El campo es obligatorio">
+</h:inputText>*</td>
+<td><h:message for="txtCorreo" style="color:red"/></td>
+</tr>
+
+<tr align="center">
+<td>Ciudad</td><td><h:inputText id="txtCiudad" value="#{persona.ciudad}" required="true"
+requiredMessage="El campo es obligatorio"/>*</td>
+<td><h:message for="txtCiudad" style="color:red"/></td>
+</tr>
+
+<tr align="center">
+<td>Clave</td><td><h:inputText id="txtClave" value="#{persona.clave}" required="true"
+requiredMessage="El campo es obligatorio"/>*</td>
+<td><h:message for="txtClave" style="color:red"/></td>
+</tr>
+
+
+ 
+<td align="center" >Estado Civil</td>
+ <h:selectOneMenu value="#{persona.estadoCivil}">
+ <f:selectItem itemValue="Soltero" itemLabel="Soltero" />
+ <f:selectItem itemValue="Casado" itemLabel="Casado"/>
+ <f:selectItem itemValue="Viudo" itemLabel="Viudo" />
+ </h:selectOneMenu>
+ </h:panelGrid>
+ <div>
+ <h:commandButton action="#{persona.registrar()}" value="Registrar" />
+ <input type="reset" value="Restablecer" />
+ </div>
+ 
+ </h:form>
+ <br>
+ </br>
+ <br>
+ </br>
+ <br></br>
+ <h:link outcome="index" value="Inicio" style="color:#1F618D ;font-weight:lighter;text-decoration:underline;font-size:large;font-family:Arial Black;text-align:center;"></h:link>
+ 
+ </body>
+</html>

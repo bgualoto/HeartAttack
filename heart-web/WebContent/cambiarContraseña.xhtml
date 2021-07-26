@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Cambiar Contraseña</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:40px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="menuAdministrador.jsf"
+				style="width:100px;height:20px;position:relative" />
+
+			<p:menuitem value=" Crear usuarios"  url="registrarse1.jsf"
+				style="width:160px;height:20px;position:relative" />
+
+			<p:menuitem value="Consultar usuarios"  url="consultarUsuarios1.jsf"
+				style="width:210px;height:20px;position:relative" />
+			
+			
+			<p:menuitem value="Cambiar contraseña"  url="cambiarContraseña.jsf"
+				style="width:220px;height:20px;position:relative" />
+				
+			<p:menuitem value="Bloquear usuario"  url="BloquearUsuario2.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+				<p:menuitem value="Auditoría"  url="auditoria.jsf"
+				style="width:170px;height:20px;position:relative" />
+				
+			<p:menuitem value="Cerrar Sesión"  url="index.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		</h:form>
+	<h:form>
+	
+	<img src="imagenes/contraseña.PNG" style="width:210px;height:200px;position: absolute ; right: 760px; top:290px" />
+	<div style="position:absolute; top:180px;  left:580px; text-align:center"> 
+
+				<h1>Cambiar contraseña</h1>
+			</div>
+		
+		<p:messages autoUpdate="true" showDetail="true" />
+		<p:panel id="panel" 
+		 
+			style="width:370px;position: relative ; right: -700px; top:150px;background-color:#CAFFCA;background-repeat:repeat; ">
+					<h:panelGrid columns="2"> 
+					
+						<p:outputLabel for="txtUsuario" value="Correo"/>	
+						<p:inputText id="txtUsuario" required="true" value="#{cambiar.usuario.correo}"/>
+						
+						<p:outputLabel for="txtClaveA" value="Clave antigua"/>	
+						<p:inputText id="txtClaveA" type="password" required="true" value="#{cambiar.usuario.clave}"/>
+						
+						<p:outputLabel for="txtClave" value="Clave nueva"/>
+						<p:inputText type="password" id="txtClave" required="true" value="#{cambiar.clavenueva}"/>
+						
+						<h:column/>
+						<p:commandButton icon="ui-icon-key" value="Cambiar Contraseña" action="#{cambiar.iniciarSesion()}"/>
+				</h:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+
+</html>

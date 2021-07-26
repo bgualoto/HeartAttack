@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Auditoría</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img id="header" src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" showDetail="true"/>
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="menuAdministrador.jsf"
+				style="width:40px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="menuAdministrador.jsf"
+				style="width:100px;height:20px;position:relative" />
+
+			<p:menuitem value=" Crear usuarios"  url="registrarse1.jsf"
+				style="width:160px;height:20px;position:relative" />
+
+			<p:menuitem value="Consultar usuarios"  url="consultarUsuarios1.jsf"
+				style="width:210px;height:20px;position:relative" />
+			
+			
+			<p:menuitem value="Cambiar contraseña"  url="cambiarContraseña.jsf"
+				style="width:220px;height:20px;position:relative" />
+				
+			<p:menuitem value="Bloquear usuario"  url="BloquearUsuario2.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+				<p:menuitem value="Auditoría"  url="auditoria.jsf"
+				style="width:170px;height:20px;position:relative" />
+				
+			<p:menuitem value="Cerrar Sesión"  url="index.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		
+	
+	<div style="position:absolute; top:180px;  left:580px; text-align:center"> 
+
+				<h1>Tabla de auditoria</h1>
+			</div>
+		
+	<div style="position:absolute; top:250px;  left:5px; text-align:center">	
+ <p:dataTable id="tabla" bgcolor="#AED6F1" border="1" align="center"
+ paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink}
+{PageLinks}" rows="15"
+  style="font-size:25px; font-family:Arial Narrow; padding:1%" value="#{auditoria.consultas}" var="resultado1" >
+ 
+
+ <p:column style="width:130px">
+ <f:facet name="header">Nombre Tabla</f:facet>
+ #{resultado1.tabla}
+ </p:column>
+ <p:column style="width:80px">
+ <f:facet name="header">Acción</f:facet>
+ #{resultado1.accion}
+ </p:column>
+ <p:column style="width:380px">
+ <f:facet name="header">Valor Anterior</f:facet>
+ #{resultado1.valoranterior}
+ </p:column>
+ <p:column>
+ <f:facet name="header">Valor Nuevo</f:facet>
+ #{resultado1.valornuevo}
+ </p:column>
+ <p:column style="width:130px">
+ <f:facet name="header">Fecha Auditoría</f:facet>
+ #{resultado1.fechaaud}
+ </p:column>
+ <p:column style="width:100px">
+ <f:facet name="header">Usuario</f:facet>
+ #{resultado1.usuario}
+ </p:column>
+ </p:dataTable>
+ <br></br>
+  <br></br>
+   <br></br>
+	<div style="position:absolute; top:790px;  left:640px; text-align:center"> 
+			<h2>Descargar tabla</h2>
+		</div>
+ <h:commandLink> 
+ <h:graphicImage url="imagenes/pddff.png" width="100" />
+			<p:dataExporter type="pdf" target="tabla " fileName="Tabla audioria Heart Attak"></p:dataExporter>	
+		</h:commandLink> 		
+ </div>
+ 
+
+
+
+	</h:form>
+</h:body>
+
+</html>

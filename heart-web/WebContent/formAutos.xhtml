@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	
+	<head>
+	</head>
+		<h:body style="background-color:#FFF176">
+	<h:form>
+	<label>Dueño</label>
+ <h:selectOneMenu converter="selectOneMenuConverter" id="dueño" value="#{auto.dueño}">
+ <f:selectItem itemValue="#{null}" itemLabel=" Seleccione" />
+ <f:selectItems value="#{auto.dueños}" var="propietario"
+itemValue="#{propietario}" itemLabel="#{propietario.nombre}"/>
+</h:selectOneMenu>
+<br></br>
+ <br></br>
+<h:message for="dueño" style="color:red" />
+<label>Año</label>
+ <h:inputText value="#{auto.año}" id="anio" requiredMessage="El campo es obligatorio"
+required="true" >
+ <f:convertNumber />
+ </h:inputText>
+ <h:message for="anio" style="color:red; font-family:Arial" />
+ <br></br>
+  <br></br>
+ <label>Placa</label>
+ <h:inputText value="#{auto.placa}" id="placa" requiredMessage="El campo es
+obligatorio" required="true" >
+
+ </h:inputText>
+ <h:message for="placa" style="color:red; font-family:Arial" />
+
+  <br></br>
+  <br></br>
+ <div>
+ <h:commandButton action="#{auto.registrarAuto()}" value="Registrar" />
+ <input type="reset" value="Restablecer" />
+ </div>
+ </h:form>
+ <br></br>
+  <h:link outcome="inicio" value="Inicio" style="color:#1F618D;font-weight:lighter;text-decoration:underline;font-size:large;font-family:Arial Black;text-align:center;"></h:link>
+	</h:body>
+</html>

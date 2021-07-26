@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:form>
+<p:messages autoUpdate="true" showDetail="true" />
+<h:panelGrid columns="2">
+<p:outputLabel for="txtUsuario" value="Correo"/>
+<p:inputText id="txtUsuario" required="true" value="#{login.usuario.correo}"/>
+<p:outputLabel for="txtClave" value="Clave"/>
+<p:inputText id="txtClave" required="true" value="#{login.usuario.clave}"/>
+<h:column/>
+<p:commandButton icon="ui-icon-key" value="Ingreso al sistema"
+action="#{login.iniciarSesion}"/>
+</h:panelGrid>
+</h:form>
+
+</html>

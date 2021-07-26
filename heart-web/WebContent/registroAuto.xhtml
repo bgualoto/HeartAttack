@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<li> <h:link outcome="index" value="Inicio"
+		style="color:DarkBlue;font-weight:bold;text-decoration:underline;font-size:xx-large;font-family:Segoe UI;font-style:italic;text-align:left;" /></li>
+
+
+
+	<title >Registrar Auto</title>
+	<link rel="stylesheet" href="css/estilos.css" />
+</h:head>
+<body bgcolor="B0D0D3">
+	<div align="center">
+		<h1 class="titulo">Registro de Autos</h1>
+		
+		<img src="images/car.png" width="200" height="70" alt="BenKo?s Art" />
+		<li>
+		</li>
+		<h:form>
+			<h:panelGrid bgcolor="F7E3AF" columns="4">
+			
+			
+				<label>Dueño</label>
+				<h:selectOneMenu value="#{registroA.dueño}" id="dueño"
+					converter="selectOneMenuConverter"
+					requiredMessage="El campo es obligatorio" required="true">
+					<f:selectItem itemValue="#{null}" itemLabel=" Seleccione" />
+					<f:selectItems value="#{registroA.dueños}" var="propietario"
+						itemValue="#{propietario}" itemLabel="#{propietario.correo}" />
+				</h:selectOneMenu>*
+			<h:message for="dueño" style="color:red" />
+			
+		
+			
+				<label>Año</label>
+				<h:inputText value="#{registroA.año}" id="año"
+					requiredMessage="El campo es obligatorio" required="true">
+					<f:convertNumber />
+				</h:inputText>*
+			<h:message for="año" style="color:red; font-family:Arial" />
+			
+			
+				<label>Placa</label>
+				<h:inputText value="#{registroA.placa}" id="placa"
+					requiredMessage="El campo esobligatorio" required="true">
+
+				</h:inputText>*
+			<h:message for="placa" style="color:red; font-family:Arial" />
+				<div>
+				
+					<h:commandButton action="#{registroA.registrar}" value="Registrar"
+						styleClass="boton" />
+					<input type="reset" value="Restablecer" styleClass="boton" />
+				</div>
+				</h:panelGrid>
+				
+		</h:form>
+	</div>
+	</body>
+</html>

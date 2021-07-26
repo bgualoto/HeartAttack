@@ -1,0 +1,93 @@
+body  {
+  margin: 0;
+  padding: 0;
+  font: normal 13px arial, helvetica, sans-serif;
+
+  }
+ 
+#menu {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 5px;
+  }
+ 
+#menu ul  {
+  list-style: none;
+  margin: 0;
+  }
+ 
+#menu ul li {
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  }
+ 
+#menu ul li a {
+    margin: 1px 2px;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    line-height: 44px;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    padding-right: 10px;
+  }
+ 
+#menu ul li a:hover {
+  color:#000;
+  }
+ 
+#item-uno a {
+  border-bottom:5px solid #f00;
+  color: #f00
+  }
+ 
+#item-dos a {
+  border-bottom:5px solid #f80;
+  color: #f80;
+  }
+ 
+#item-tres a {
+  border-bottom:5px solid #ff0;
+  color: #ff0;
+  }
+ 
+#item-cuatro a {
+  border-bottom:5px solid #8f0;
+  color: #8f0;
+  }
+ 
+#item-cinco a {
+  border-bottom:5px solid #0ff;
+  color: #0ff;
+  }
+ 
+#item-seis a {
+  border-bottom:5px solid #08f;
+  color: #08f;
+  }
+ 
+#item-uno a:hover {
+  background:#f00;
+  }
+ 
+#item-dos a:hover {
+  background:#f80;
+  }
+ 
+#item-tres a:hover {
+  background:#ff0;
+  }
+ 
+#item-cuatro a:hover {
+  background:#8f0;
+  }
+ 
+#item-cinco a:hover {
+  background:#0ff;
+  }
+ 
+#item-seis a:hover {
+  background:#08f;
+  }

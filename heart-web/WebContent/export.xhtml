@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	
+	<title>Hear Attacks - Desarrolladores</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+<h:head>
+</h:head>
+
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:80px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="index.jsf"
+				style="width:140px;height:20px;position:relative" />
+
+			<p:submenu label="Información importante"
+				style="width:310px;height:18px;position:relative">
+				<p:menuitem value="Causas" url="causas.jsf"  />
+				<p:menuitem value="Sintomas" url="#" />
+				<p:menuitem value="Prevención" url="#" /> 
+			</p:submenu>
+
+			
+			
+			<p:submenu label="Acerca de nosotros" icon="fa fa-bank"
+				style="width:320px;height:18px;position:relative">
+				<p:menuitem value="Misión" url="mision.jsf"  />
+				<p:menuitem value="Visión" url="vision.jsf" />
+			</p:submenu>
+			
+			<p:menuitem value="Desarrolladores"  url="#"
+				style="width:200px;height:20px;position:relative" />
+				
+			<p:menuitem value="Iniciar Sesión"  url="login.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		</h:form>
+    <h:form>
+
+
+   </h:form>
+   <h1 align="center">Reporte de presión arterial en reposo</h1>
+   <br></br>
+   <br></br>
+<script type="text/javascript">
+    //<![CDATA[
+    function exportChart() {
+        //export image
+        $('#output').empty().append(PF('chart').exportAsImage());
+
+        //show the dialog
+        PF('dlg').show();
+    }
+    //]]>
+</script>
+
+<div class="card">
+
+    <p:barChart model="#{chartJsView.barModel}" style="width: 100%; height: 500px;" widgetVar="chart"/>
+    <br/>
+
+    <p:commandButton type="button" value="Export" icon="pi pi-home" onclick="exportChart()"/>
+
+    <p:dialog widgetVar="dlg" showEffect="fade" modal="true" header="Chart as an Image" resizable="false">
+        <p:outputPanel id="output" layout="block" style="width:500px;height:300px"/>
+    </p:dialog>
+</div>
+    </h:body>
+</html>

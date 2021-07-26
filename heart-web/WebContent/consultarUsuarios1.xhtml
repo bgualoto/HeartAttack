@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Consultar Usuarios</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" showDetail="true"/>
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:40px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="menuAdministrador.jsf"
+				style="width:100px;height:20px;position:relative" />
+
+			<p:menuitem value=" Crear usuarios"  url="registrarse1.jsf"
+				style="width:160px;height:20px;position:relative" />
+
+			<p:menuitem value="Consultar usuarios"  url="consultarUsuarios1.jsf"
+				style="width:210px;height:20px;position:relative" />
+			
+			
+			<p:menuitem value="Cambiar contraseña"  url="cambiarContraseña.jsf"
+				style="width:220px;height:20px;position:relative" />
+				
+			<p:menuitem value="Bloquear usuario"  url="BloquearUsuario2.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+				<p:menuitem value="Auditoría"  url="auditoria.jsf"
+				style="width:170px;height:20px;position:relative" />
+				
+			<p:menuitem value="Cerrar Sesión"  url="index.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		</h:form>
+	<h:form>
+	<div style="position:absolute; top:180px;  left:420px; text-align:center"> 
+
+				<h1>Todos los usuarios registrados en la base de datos</h1>
+			</div>
+		<h:form>
+	<div style="position:absolute; top:250px;  left:415px; text-align:center">	
+ <h:dataTable bgcolor="#AED6F1" border="2" align="center" style="font-size:25px; font-family:Arial Narrow; padding:2%" value="#{consultas.consultas}" var="resultado1" >
+ 
+
+ <h:column>
+ <f:facet name="header">Nombre</f:facet>
+ #{resultado1.nombre}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Ciudad</f:facet>
+ #{resultado1.ciudad}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Edad</f:facet>
+ #{resultado1.edad}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Estado Civil</f:facet>
+ #{resultado1.estadoCivil}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Correo electrónico</f:facet>
+ #{resultado1.correo}
+ </h:column>
+ </h:dataTable>
+ </div>
+</h:form>
+	
+	</h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+		<title>Buscar por Ciudad</title>
+    </h:head>
+    <h:body >
+    
+    <style> 
+  h2 {font-style: italic; }
+	 
+  
+</style>
+    
+    
+    <body bgcolor="EAE2B7">
+    <h:form>
+    
+        <li> <h:link outcome="index" value="Inicio" style="color:DarkBlue;font-weight:bold;text-decoration:underline;font-size:xx-large;font-family:Segoe UI;font-style:italic;text-align:left;" /></li>
+    
+    
+     <center><u><h1>Listado de personas que viven en Quito</h1></u></center>
+     
+     		<h:panelGrid columns="1" border="2" frame="box" bgcolor="EDF2FB">
+     
+
+    	<ul>
+	    	<ui:repeat var="resultado" value="#{ciudad.personas}">
+	    		<li> 
+	    			<h2><h:outputText value="#{resultado.nombre}" /> ,	    			
+	    			<h:outputText value="  #{resultado.correo}" />,
+	    			<h:outputText value="  #{resultado.ciudad}" />.</h2>
+	   			</li>
+	   	  	</ui:repeat>
+	    </ul>	    
+	    </h:panelGrid>
+	    
+	    
+    </h:form>
+    </body>
+    </h:body>
+</html>

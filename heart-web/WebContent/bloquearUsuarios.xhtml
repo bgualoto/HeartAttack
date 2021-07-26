@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Prevención</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:80px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="index.jsf"
+				style="width:140px;height:20px;position:relative" />
+
+			<p:submenu label="Información importante"
+				style="width:310px;height:18px;position:relative">
+				<p:menuitem value="Causas" url="causas.jsf"  />
+				<p:menuitem value="Sintomas" url="sintomas.jsf" />
+				<p:menuitem value="Prevención" url="prevencion.jsf" /> 
+			</p:submenu>
+
+			
+			
+			<p:submenu label="Acerca de nosotros" icon="fa fa-bank"
+				style="width:320px;height:18px;position:relative">
+				<p:menuitem value="Misión" url="mision.jsf"  />
+				<p:menuitem value="Visión" url="vision.jsf" />
+			</p:submenu>
+			
+			<p:menuitem value="Desarrolladores"  url="desarrolladores.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+			<p:menuitem value="Cerrar Sesión"  url="index.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		</h:form>
+	<h:form>
+	<p:slideMenu style="background-color:#f7c59f;position:absolute;top: 180px; width: 200px; right: 86%; border-radius: 0px; border:none" >
+ 		 <p:menuitem style="margin: 4px " value="Crear usuarios" icon="fa fa-user-plus" url="registrarse.jsf"/>
+        <p:menuitem style="margin: 4px " value="Consultar usuarios" ajax="false" icon="fa fa-search" url="consultarDatos.jsf" />
+        <p:menuitem style="margin: 4px "  value="Cambiar contraseña " icon="fa fa-lock " url="cambiarContraseña.jsf" />
+        <p:menuitem style="margin: 4px "  value="Auditoria" icon="fa fa-user-times" url="eliminarUsuarios.jsf"/>
+            
+    </p:slideMenu>
+	<img src="imagenes/bloquear.PNG" style="width:150px;height:160px;position: absolute ; right: 760px; top:290px" />
+	<div style="position:absolute; top:180px;  left:580px; text-align:center"> 
+
+				<h1>Bloquear usuarios</h1>
+			</div>
+		
+		<p:panel id="panel"	style="position: relative; top: 130px; right: -700px; width: 355px">
+			<h:panelGrid columns="3" cellpadding="2">
+			
+			
+					
+						<p:outputLabel for="txtUsuario" value="Correo"/>	
+						<p:inputText id="txtUsuario" required="true" value="#{bloquear.usuario.correo}"/>
+						
+						<p:outputLabel for="txtClaveA" value="Clave antigua"/>	
+						<p:inputText id="txtClaveA" required="true" value="#{bloquear.usuario.clave}"/>
+						
+			
+			</h:panelGrid>
+			<p:commandButton  value="Bloquear" action="#{bloquear.iniciarSesion()}" styleClass="rounded-button ui-button-success" style="width:156px;background-color:green;background-repeat:repeat; color:white"/>
+				 <p:commandButton type="Reset" value="Cancelar" styleClass="ui-button-raised ui-button-danger ui-button-flat" style="width:155px;background-color:#c81d25;background-repeat:repeat;color:white "/>
+				
+		</p:panel>
+		
+	</h:form>
+</h:body>
+
+</html>

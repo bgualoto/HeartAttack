@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Prevención</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:40px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="menuAdministrador.jsf"
+				style="width:100px;height:20px;position:relative" />
+
+			<p:menuitem value=" Crear usuarios"  url="registrarse1.jsf"
+				style="width:160px;height:20px;position:relative" />
+
+			<p:menuitem value="Consultar usuarios"  url="consultarUsuarios1.jsf"
+				style="width:210px;height:20px;position:relative" />
+			
+			
+			<p:menuitem value="Cambiar contraseña"  url="cambiarContraseña.jsf"
+				style="width:220px;height:20px;position:relative" />
+				
+			<p:menuitem value="Bloquear usuario"  url="BloquearUsuario2.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+				<p:menuitem value="Auditoría"  url="auditoria.jsf"
+				style="width:170px;height:20px;position:relative" />
+				
+			<p:menuitem value="Cerrar Sesión"  url="index.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		</h:form>
+	<h:form>
+	 <a href="BloquearUsuario2.jsf"><img src="imagenes/bloquear.PNG" style="width:210px;height:200px;position: absolute ; right: 320px; top:290px" /></a>
+	
+	 <a href="cambiarContraseña.jsf"><img src="imagenes/contraseña.PNG" style="width:260px;height:240px;position: absolute ; right: 580px; top:360px" /></a>
+	 <a href="consultarUsuarios1.jsf"><img src="imagenes/lupa.png" style="width:260px;height:260px;position: absolute ; right:870px; top:260px" /></a>
+	 <a href="auditoria.jsf"><img src="imagenes/auditoria.png" style="width:210px;height:200px;position: absolute ; right:40px; top:360px" /></a>
+	<a href="registrarse1.jsf"><img src="imagenes/agregar.png" style="width:280px;height:240px;position: absolute ; right: 1130px; top:360px" /></a>
+	<div style="position:absolute; top:180px;  left:550px; text-align:center"> 
+
+				<h1>Bienvenido, Administrador</h1>
+			</div>
+		
+		<div style="position:absolute; top:310px;  left:70px; text-align:center"> 
+			
+			<h2>Agregar usuario</h2>
+			</div>
+		
+		<div style="position:absolute; top:470px;  left:320px; text-align:center"> 
+			<h2>Consultar usuarios</h2>
+		</div>
+		
+		<div style="position:absolute; top:310px;  left:600px; text-align:center"> 
+			<h2>Cambiar contraseña</h2>
+			</div>
+			
+		<div style="position:absolute; top:480px;  left:905px; text-align:center"> 
+			<h2>Bloquear usuarios</h2>
+		</div>
+		
+		<div style="position:absolute; top:310px;  left:1230px; text-align:center"> 
+			<h2>Auditoría</h2>
+		</div>
+		
+	</h:form>
+</h:body>
+
+</html>

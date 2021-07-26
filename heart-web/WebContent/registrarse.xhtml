@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Crear Usuarios</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:80px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="index.jsf"
+				style="width:140px;height:20px;position:relative" />
+
+			<p:submenu label="Información importante"
+				style="width:310px;height:18px;position:relative">
+				<p:menuitem value="Causas" url="causas.jsf"  />
+				<p:menuitem value="Sintomas" url="sintomas.jsf" />
+				<p:menuitem value="Prevención" url="prevencion.jsf" /> 
+			</p:submenu>
+
+			
+			
+			<p:submenu label="Acerca de nosotros" icon="fa fa-bank"
+				style="width:320px;height:18px;position:relative">
+				<p:menuitem value="Misión" url="mision.jsf"  />
+				<p:menuitem value="Visión" url="vision.jsf" />
+			</p:submenu>
+			
+			<p:menuitem value="Desarrolladores"  url="desarrolladores.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+			<p:menuitem value="Cerrar Sesión"  url="index.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		</h:form>
+	<h:form>
+	<p:slideMenu style="background-color:#f7c59f;position:absolute;top: 180px; width: 200px; right: 86%; border-radius: 0px; border:none" >
+ 		 <p:menuitem style="margin: 4px " value="Crear usuarios" icon="fa fa-user-plus" url="registrarse.jsf"/>
+        <p:menuitem style="margin: 4px " value="Consultar usuarios" ajax="false" icon="fa fa-search" url="consultarUsuarios.jsf" />
+        <p:menuitem style="margin: 4px "  value="Cambiar contraseña" icon="fa fa-lock " url="cambiarContraseña.jsp" />
+        <p:menuitem style="margin: 4px "  value="Auditoria" icon="fa fa-user-times" url="eliminarUsuarios.jsf"/>
+            
+    </p:slideMenu>
+	<img src="imagenes/agregar.png" style="width:430px;position: absolute ; right: 650px; top:290px" />
+	<div style="position:absolute; top:220px;  left:380px; text-align:center"> 
+
+				<h1>Crear usuarios</h1>
+			</div>
+		
+		<p:panel id="panel"  
+			style="width:450px;position: relative ; right: -700px; top:45px;background-color:#CAFFCA;background-repeat:repeat; ">
+			<h:panelGrid columns="3" cellpadding="5">
+				
+				<p:outputLabel for="txtNombre" value="Nombre:"  />
+				<p:inputText requiredMessage="El campo es obligatorio"
+					id="txtNombre"  required="true" placeholder="Ingresar nombre"
+					label="Nombre" validatorMessage="Error en el formato" update="panel">
+					
+					<f:validateRegex  pattern="[a-zA-Z ]{3,50}"/></p:inputText>
+				<p:message for="txtNombre" style="color:red" display="icon,text" />
+				<p:outputLabel for="txtApellido" value="Nombre de usuario:" />
+				<p:inputText requiredMessage="El campo es obligatorio"
+					id="txtApellido" placeholder="Ingresar usuario" required="true"
+					label="Apellido" validatorMessage="Error en el formato" update="panel"><f:validateRegex  pattern="[a-zA-Z ]{3,50}"/></p:inputText>
+				<p:message for="txtApellido" style="color:red"></p:message>
+		
+				<p:outputLabel for="Ciudad" value="Género:" />
+				<p:selectOneMenu id="Ciudad" 
+					style="width:175px" dir="Ciudad" validatorMessage="Error en el formato" update="panel"><f:validateRegex  pattern="[a-zA-Z ]{3,30}"/>
+					<f:selectItem itemLabel="Elige tu género"
+						itemValue="" />
+					<f:selectItem itemLabel="Femenino" itemValue="Femenino" />
+					<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+					<f:selectItem itemLabel="Otro" itemValue="Otro" />
+				</p:selectOneMenu>
+				<br></br>
+				<p:outputLabel for="txtEdad" value="Edad:" />
+				<p:inputText validatorMessage="Error en el formato" requiredMessage="El campo es obligatorio" id="txtEdad"
+					placeholder="Ingresar edad" required="true" label="Edad" update="panel" >
+					<f:validateLongRange minimum="18" maximum="70"/>
+				</p:inputText>
+					<p:message for="txtEdad" style="color:red"></p:message>
+					
+				<p:outputLabel for="txtNumero" value="Teléfono:" />
+				<p:inputText requiredMessage="El campo es obligatorio" update="panel" placeholder="Ingresar teléfono"
+					id="txtCiudad"  required="true"
+					label="Ciudad" validatorMessage="Error en el formato">
+					<f:validateRegex  pattern="[0-9]{10}"/>	</p:inputText>
+					<p:message for="txtCiudad" style="color:red"></p:message>
+					<p:outputLabel for="txtCiudad" value="Ciudad:" />
+				<p:inputText requiredMessage="El campo es obligatorio" update="panel"
+					id="txtNumero"  required="true" placeholder="Ingresar ciudad"
+					label="Número" validatorMessage="Error en el formato">
+					<f:validateRegex  pattern="[0-9]{10}"/>	</p:inputText>
+					<p:message for="txtNumero" style="color:red"></p:message>
+				<p:outputLabel for="txtCorreo" value="Correo:" />
+				<p:inputText requiredMessage="El campo es obligatorio" update="panel"
+					id="txtCorreo"  required="true" placeholder="Ingresar correo"
+					label="Correo" validatorMessage="Error en el formato"><f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>	</p:inputText>
+					<p:message for="txtCorreo" style="color:red"></p:message>
+					<p:outputLabel for="Tipo" value="Tipo " />
+				<p:selectOneMenu id="Tipo" 
+					style="width:175px" dir="Ciudad" validatorMessage="Error en el formato" update="panel"><f:validateRegex  pattern="[a-zA-Z ]{3,30}"/>
+					<f:selectItem itemLabel="Tipo de usuario"
+						itemValue="" />
+					<f:selectItem itemLabel="Administrador" itemValue="Administrador" />
+					<f:selectItem itemLabel="Registrado" itemValue="Registrado" />
+				</p:selectOneMenu>
+				<br></br>
+				<p:outputLabel for="txtClave" value="Contraseña:" />
+				<p:password requiredMessage="El campo es obligatorio" id="txtClave" placeholder="Ingresar contraseña"
+				 required="true" label="Contraseña" />
+				<p:message for="txtClave" style="color:red"></p:message>
+				<p:commandButton  value="Crear usuario" styleClass="rounded-button ui-button-success" style="width:190px;background-color:#03045e;background-repeat:repeat; color:white"/>
+				 <p:commandButton type="Reset" value="Cancelar" styleClass="ui-button-raised ui-button-danger ui-button-flat" style="width:190px;background-color:#c81d25;background-repeat:repeat;color:white "/>
+				 
+				 
+			</h:panelGrid>
+
+		</p:panel>
+		
+	</h:form>
+</h:body>
+
+</html>

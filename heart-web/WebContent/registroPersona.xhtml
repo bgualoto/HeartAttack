@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"> <!-- <ui:composition template="${cursor}">
+	
+	</ui:composition> --> <h:form>
+
+	<li> <h:link outcome="index" value="Inicio"
+		style="color:DarkBlue;font-weight:bold;text-decoration:underline;font-size:xx-large;font-family:Segoe UI;font-style:italic;text-align:left;" /></li>
+
+
+	<center> <body bgcolor="B0D0D3"> <h1>Registro de personas </h1>
+	
+	<img src="images/usuario.png" width="200" height="120" alt="usuario" />
+		<li>
+		</li>
+	
+	 <h:panelGrid bgcolor="F7E3AF" columns="4">
+
+
+
+		<label>Nombre:</label>
+
+		<h:inputText  value="#{registro.nombre}" id="nombre" 
+		required="true" requiredMessage="El nombre es obligatorio" >
+		<f:validateRequired/>
+		</h:inputText>*
+		<h:message for="nombre" style="color:red" />
+
+
+
+		<label>Ciudad:</label>
+		<h:inputText value="#{registro.ciudad}" id="ciudad" required="true"
+			requiredMessage="La ciudad es obligatorio">
+		<f:validateRequired/>
+		</h:inputText>*
+		<h:message for="ciudad" style="color:red" />	
+
+
+		<label>Edad:</label>
+		<h:inputText value="#{registro.edad}" id="edad" required="true" 
+			requiredMessage="El campo es obligatorio">
+		<f:validateLongRange minimum="18" maximum="100"/>
+		</h:inputText>*
+		<h:message for="edad" style="color:red" />
+		
+		
+		
+		<label>Estado Civil:</label>
+		<h:selectOneMenu value="#{registro.estadoCivil}" id="estado" required="true" requiredMessage="El estado civil es obligatorio"> 
+			<f:selectItem itemValue="Soltero" itemLabel="Soltero" />
+			<f:selectItem itemValue="Casado" itemLabel="Casado" />
+			<f:selectItem itemValue="Viudo" itemLabel="Viudo" />
+		<f:validateRequired/>
+		</h:selectOneMenu>*
+		<h:message for="estado" style="color:red" />	
+		
+		
+		<label>Correo electrónico:</label>
+		<h:inputText value="#{registro.correo}" id="correo"  required="true" requiredMessage="El correo es obligatorio">
+		<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" 
+		validateRequired="Debe ser un correo válido"/> 
+		</h:inputText>* <h:message for="correo" style="color:red"/>
+
+
+		<label>Clave:</label>
+		<h:inputText value="#{registro.clave}" id="clave" required="true"
+			requiredMessage="La clave es obligatorio">
+		<f:validateRequired/>
+		</h:inputText>*
+		<h:message for="clave" style="color:red" />	
+		
+		<label>Rol</label>
+				<h:selectOneMenu value="#{registro.rol}" id="rol"
+					converter="selectOneMenuConverter"
+					requiredMessage="El campo es obligatorio" required="true">
+					<f:selectItem itemValue="#{null}" itemLabel=" Seleccione" />
+					<f:selectItems value="#{registro.roles}" var="role"
+						itemValue="#{role}" itemLabel="#{role.descripcion}" />
+				</h:selectOneMenu>*
+			<h:message for="rol" style="color:red" />
+		
+	
+
+
+	</h:panelGrid> <div> <h:commandButton action="#{registro.registrar}" 
+		value="Registrar" /> <input type="reset" value="Restablecer" /> </div> </body></center>
+
+</h:form> </html>

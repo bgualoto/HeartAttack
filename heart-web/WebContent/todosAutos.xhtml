@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	style="border-top-width: 0px;
+    padding-top: 40px;"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"> <h:head>
+	<title>Autos</title>
+</h:head> <h:body>
+	<body bgcolor="FFCB69"> <h:form>
+		<style>
+  h1 { color: black; font-style: Verdana; }
+  
+  table td {
+	background-color:yellow;
+	}
+  h2 { color: blue; font-style: Comic-Sans; }
+	
+ h3 { font-style: italic; }
+  
+</style>
+		<li> <h:link outcome="index" value="Inicio"
+			style="color:DarkBlue;font-weight:bold;text-decoration:underline;font-size:xx-large;font-family:Segoe UI;font-style:italic;text-align:left;" /></li>
+
+		<center>
+		<h:panelGrid columns="1" border="2" frame="box" bgcolor="blue">
+
+			<h:dataTable border="2" value="#{autos.autos}" var="resultado1">
+				<f:facet name="caption">
+					<h1>
+					<u>Listado de autos</u></h1>
+				</f:facet>
+				<h:column>
+					<f:facet name="header">
+						<h2>Propietario</h2>
+					</f:facet>
+					<center>
+					<h3>#{resultado1.dueño.nombre}</h3></center>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h2>Placa Auto</h2>
+					</f:facet>
+					<center>
+					<h3>#{resultado1.placa}</h3></center>
+				</h:column>
+				
+					
+				<h:column>
+					<f:facet name="header">
+						<h2>Año Auto</h2>
+					</f:facet>
+					<center>
+					<h3>#{resultado1.anio}</h3></center>
+				</h:column>
+			
+			</h:dataTable>
+
+		</h:panelGrid> </center>
+	</h:form> </body>
+</h:body> </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Prevención</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:80px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="index.jsf"
+				style="width:140px;height:20px;position:relative" />
+
+			<p:submenu label="Información importante"
+				style="width:310px;height:18px;position:relative">
+				<p:menuitem value="Causas" url="causas.jsf"  />
+				<p:menuitem value="Sintomas" url="sintomas.jsf" />
+				<p:menuitem value="Prevención" url="prevencion.jsf" /> 
+			</p:submenu>
+
+			
+			
+			<p:submenu label="Acerca de nosotros" icon="fa fa-bank"
+				style="width:320px;height:18px;position:relative">
+				<p:menuitem value="Misión" url="mision.jsf"  />
+				<p:menuitem value="Visión" url="vision.jsf" />
+			</p:submenu>
+			
+			<p:menuitem value="Desarrolladores"  url="desarrolladores.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+			<p:menuitem value="Iniciar Sesión"  url="login.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		<div style="position:absolute;  left:190px; text-align:center"> 
+
+				<h2>¿Cómo prevenir un ataque cardíaco.</h2>
+			</div>
+	<p:accordionPanel style="position: absolute; width:35%; left:63%;top: 200px; text-align:justify;" >
+	
+        <p:tab title="Godfather Part I" >
+        <f:facet name="title"> 
+         <i class="fa fa-angle-down"></i>
+       <h:outputText value="Video informativo"/> 
+      </f:facet> 
+            <h:panelGrid columns="2" cellpadding="10">
+               <p:imageSwitch effect="fade" id="fadeEffect"
+			>
+			<iframe width="390" height="240"
+						src="https://www.youtube.com/embed/A3QzQHTyTZo" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+		</p:imageSwitch>
+            </h:panelGrid>
+        </p:tab>
+         <p:tab title="Godfather Part III">
+        <f:facet name="title"> 
+         <i class="fa fa-angle-down"></i>
+       <h:outputText value="Información relevante"/> 
+      </f:facet> 
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText value="Las enfermedades cardiovasculares son la primera causa de muerte en todo el mundo. Cada año, alrededor de 17 millones de personas mueren en el mundo a 
+                causa de enfermedades relacionadas con el corazón, lo que supone un 32% del total de defunciones." />
+                
+
+            </h:panelGrid>
+        </p:tab>
+         <p:tab title="Godfather Part III">
+        <f:facet name="title"> 
+         <i class="fa fa-angle-down"></i>
+       <h:outputText value="¿Sabías qué?"/> 
+      </f:facet> 
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText value="Un corazón sacado del cuerpo humano puede seguir latiendo y manteniéndose funcional durante horas. Esto es clave para los trasplantes y es debido a que el corazón es un órgano autónomo y puede contraerse por sí solo gracias a
+                 los impulsos eléctricos que genera y a las células musculares especiales de las que está dotado." />
+                
+
+            </h:panelGrid>
+        </p:tab>
+        </p:accordionPanel>
+       
+    <div style="position:absolute;  left:0px; top: 245px;width:830px;text-align:justify">    
+       <h:form>
+        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+      
+        <p:fieldset legend="Comer saludable">
+            <p class="p-m-0">
+             Todo lo que son alimentos altos en grasa, con exceso de sodio, carnes rojas o productos con azúcar
+              deben ser reducidos significativamente. Asimismo, los embutidos o alimentos que sean altamente procesados, así como el pan y las galletas hechas con bromuro de potasio deben ser consumidos con moderación.  
+             </p>
+             </p:fieldset> 
+        <br></br>
+        <br></br>
+        <p:fieldset legend="Tomar prebióticos">
+            <p class="p-m-0">
+                Aunque parezcan complicados, son microorganismos vivos que se encuentran en los alimentos, medicamentos o suplementos dietéticos. Cuando se ingieren, en cantidades equilibradas, pueden aportar beneficios 
+                como un buen funcionamiento de la digestión, además de fortalecer el sistema inmune.  </p>
+             
+        </p:fieldset>
+        <br></br>
+        <br></br>
+        <p:fieldset legend="Practica la meditación">
+            <p class="p-m-0">
+              Los altos niveles de estrés provocan un incremento en la tensión arterial. Por lo tanto, aumentan las probabilidades de sufrir una insuficiencia cardiovascular. La meditación es un excelente método para prevenir estas insuficiencias, bajando la presión. A su vez, es excelente como recurso terapéutico para los que sufren del corazón. </p>
+             
+        </p:fieldset> <br></br>
+        <br></br>
+        <p:fieldset legend="Ponte de pie">
+            <p class="p-m-0">
+                Evita el sedentarismo, levántate del sofá y camina, corre. Haz bicicleta, artes marciales, la actividad física que te provoque, pero actívate. El movimiento y la actividad son grandes herramientas que tenemos para poder disminuir cualquier riesgo cardíaco.</p>
+             
+        </p:fieldset>
+        
+        
+</h:form>
+	</div>			
+			
+				
+				
+		
+</h:form>
+		</h:body>
+</html>

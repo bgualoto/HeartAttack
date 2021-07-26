@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"> <h:head>
+
+	<title>Login</title>
+
+	<h:head>
+		<f:event type="preRenderView"
+			listener="#{plantilla.verificarSesion()}" />
+		<title>Gestión Usuarios</title>
+	</h:head>
+	
+	
+	<h:body>
+		<div id="top"> <ui:insert name="top">
+		
+ 
+			<h:form>
+				<p:menubar model="#{MenuBean.model}">
+				</p:menubar>
+			</h:form>
+			
+	
+		</ui:insert> </div>
+		
+		<div id="content" class="center_content"> 
+			<ui:insert name="content">Content</ui:insert> 
+		</div>
+			
+			<div id="bottom"> 
+				<ui:insert name="bottom">Bottom</ui:insert>
+			 </div>
+	</h:body>
+	
+	</h:head>
+</html>

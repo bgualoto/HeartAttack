@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+		<title>Todas las personas</title>
+    </h:head>
+ <h:body style="background-color:#FFF176">
+	 <h:form>
+ <h:dataTable bgcolor="#AED6F1" border="2" align="center" style="font-size:25px; font-family:calibri; padding:2%"  value="#{personas.personas}" var="resultado" >
+ <f:facet style="font-size:25px; font-family:calibri" name="caption"><b>Listado de personas en la base de datos</b></f:facet>
+<h:column>
+ <f:facet name="header">Código</f:facet>
+ #{resultado.identificacion}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Nombre</f:facet>
+ #{resultado.nombre}
+ </h:column>
+  <h:column>
+ <f:facet name="header">Ciudad</f:facet>
+ #{resultado.ciudad}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Edad</f:facet>
+ #{resultado.edad}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Estado Civil</f:facet>
+ #{resultado.estadoCivil}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Correo electrónico</f:facet>
+ #{resultado.correo}
+ </h:column>
+ </h:dataTable>
+</h:form>
+<br></br>
+<h:link outcome="formulario" value="Ingresar personas a la base" style="color:#1F618D;font-weight:lighter;text-decoration:underline;font-size:large;font-family:Arial Black;text-align:center;"></h:link>
+<br></br>
+<br></br>
+<h:link outcome="index" value="Inicio" style="color:#1F618D;font-weight:lighter;text-decoration:underline;font-size:large;font-family:Arial Black;text-align:center;"></h:link>
+</h:body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:link rel="stylesheet" href="css/estilos.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefaces" />
+	<title>Hear Attacks - Inicio</title>
+<h:outputStylesheet library="font-awesome"
+	name="css/font-awesome.min.css" />
+<h:outputStylesheet name="primeicons/primeicons.css"
+	library="primefacesss" />
+
+<h:head>
+</h:head>
+<h:body>
+<img src="imagenes/header.jpg"
+			style=" position:relative;  width: 1350px; right: 0px; " />
+	<h:form>
+		
+			<p:growl id="messages" />
+		<p:menubar class="menu" style="background-color:#f7c59f;background-repeat:repeat; color:white"> 
+				<p:menuitem value=" "  url="index.jsf"
+				style="width:80px;height:20px;position:relative" />
+				
+			<p:menuitem value=" Inicio"  url="index.jsf"
+				style="width:140px;height:20px;position:relative" />
+
+			<p:submenu label="Información importante"
+				style="width:310px;height:18px;position:relative">
+				<p:menuitem value="Causas" url="causas.jsf"  />
+				<p:menuitem value="Sintomas" url="sintomas.jsf" />
+				<p:menuitem value="Prevención" url="prevencion.jsf" /> 
+			</p:submenu>
+
+			
+			
+			<p:submenu label="Acerca de nosotros" icon="fa fa-bank"
+				style="width:320px;height:18px;position:relative">
+				<p:menuitem value="Misión" url="mision.jsf"  />
+				<p:menuitem value="Visión" url="vision.jsf" />
+			</p:submenu>
+			
+			<p:menuitem value="Desarrolladores"  url="desarrolladores.jsf"
+				style="width:200px;height:20px;position:relative" />
+				
+			<p:menuitem value="Iniciar Sesión"  url="login.jsf"
+				style="width:160px;height:20px;position:relative" />
+			
+		</p:menubar>
+		<div style="position:absolute;  left:190px; text-align:center"> 
+
+				<h2>Principales causas de un ataque cardíaco.</h2>
+			</div>
+	<p:accordionPanel style="position: absolute; width:35%; left:63%;top: 200px; text-align:justify;" >
+	
+        <p:tab title="Godfather Part I" >
+        <f:facet name="title"> 
+         <i class="fa fa-angle-down"></i>
+       <h:outputText value="Video informativo"/> 
+      </f:facet> 
+            <h:panelGrid columns="2" cellpadding="10">
+               <p:imageSwitch effect="fade" id="fadeEffect"
+			>
+			<iframe width="390" height="240"
+						src="https://www.youtube.com/embed/wy_rwkknCG4" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+		</p:imageSwitch>
+            </h:panelGrid>
+        </p:tab>
+         <p:tab title="Godfather Part III">
+        <f:facet name="title"> 
+         <i class="fa fa-angle-down"></i>
+       <h:outputText value="Información relevante"/> 
+      </f:facet> 
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText value="El corazón humano late, de media, 
+                80 veces por minuto. Lo hace sin descanso, lo que supone que en el transcurso 
+                de un día realiza unos 115.200 latidos. En un año, por lo tanto, son unos 42 millones de latidos. Teniendo en cuenta que la esperanza de vida está en, aproximadamente, 82 años, el corazón late más de 3.000 millones de veces a lo largo de una vida.
+
+Sin embargo, durante la ejecución de una actividad física intensa, el corazón late mucho más rápido, pudiendo llegar a los 200 latidos por minuto." />
+                
+
+            </h:panelGrid>
+        </p:tab>
+         <p:tab title="Godfather Part III">
+        <f:facet name="title"> 
+         <i class="fa fa-angle-down"></i>
+       <h:outputText value="¿Sabías qué?"/> 
+      </f:facet> 
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText value="No se sabe exactamente por qué, pero la estadística indica que la mayoría de 
+                infartos ocurren los lunes. Además, Navidad es el día del año con mayor incidencia de infartos." />
+                
+
+            </h:panelGrid>
+        </p:tab>
+        </p:accordionPanel>
+       
+    <div style="position:absolute;  left:0px; top: 245px;width:830px;text-align:justify">    
+       <h:form>
+        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+      
+        <p:fieldset legend="Presión arterial alta">
+            <p class="p-m-0">
+               Con el tiempo, la presión arterial alta pude dañar las arterias que van hacia el corazón.
+                Cuando la presión arterial alta se produce junto con otras enfermedades, como la obesidad, el colesterol alto o la diabetes, aumenta aún más el riesgo.
+                </p>
+        </p:fieldset> 
+        <br></br>
+        <br></br>
+        <p:fieldset legend="Obesidad">
+            <p class="p-m-0">
+               La obesidad está relacionada con el nivel alto de colesterol en sangre, el nivel alto de 
+               triglicéridos, la presión arterial alta y la diabetes. Reducir simplemente un 10 % del peso 
+               corporal puede reducir el riesgo </p>
+             
+        </p:fieldset>
+        <br></br>
+        <br></br>
+        <p:fieldset legend="Diabetes">
+            <p class="p-m-0">
+               No producir suficiente insulina (una hormona secretada por el páncreas) o no responder a
+                la insulina de manera adecuada provoca que los niveles
+                de glucosa en la sangre del cuerpo aumenten, lo que incrementa el riesgo de tener un ataque cardíaco. </p>
+             
+        </p:fieldset> <br></br>
+        <br></br>
+        <p:fieldset legend="Síndrome metabólico">
+            <p class="p-m-0">
+                Este síndrome se manifiesta cuando tienes obesidad, presión arterial alta y nivel alto de 
+                glucosa en la sangre. El síndrome metabólico hace que seas dos
+                 veces más propenso a tener una enfermedad cardíaca que las personas que no tienen este síndrome.</p>
+             
+        </p:fieldset>
+        
+        <br></br>
+        <br></br>
+        <p:fieldset legend="Estrés">
+            <p class="p-m-0">
+               Es posible que respondas al estrés de maneras que pueden aumentar el riesgo de tener un ataque cardíaco. </p>
+             
+        </p:fieldset>
+</h:form>
+	</div>			
+			
+				
+			
+		
+		
+</h:form>
+		</h:body>
+</html>
