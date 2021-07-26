@@ -70,4 +70,4 @@ Este proyecto está bajo la Licencia (Eclipse libre).
 
 ## Agradecimientos 📄
 
-Gracias a nuestros familiares por apoyarnos dia a dia, a los compañeros de clase por colaborar en algunos errores y a los ingenieros que guiaron en el proceso de este proyecto.
+Gracias a nuestros familiares por apoyarnos en cualquier aspecto y a los ingenieros que guiaron en el proceso de este proyecto.
